@@ -44,14 +44,13 @@ const Api = () => {
 
 
   return (
-    
-    <div className="container mx-auto " >
+    <div className="container mx-auto p-20" >
     {/* <img src={Weather_img}/> */}
-      <div className=" ">
-        <h1 className="text-4xl text-blue-500 font-bold text-center mt-52">
+   
+        <h1 className="text-4xl text-blue-500 font-bold text-center mt-52 mx-auto">
           Weather App
         </h1>
-        <div className="flex flex-wrap mt-4 w-1/2  mx-auto ">
+        <div className="flex flex-wrap mt-4 w-1/2  mx-auto">
           <div className="mx-auto">
             <input
               className=" border pl-4 text-gray-600 placeholder:text-lg placeholder:font-normal text-lg font-semibold outline-none border-blue-300 mx-auto hover:border-blue-600 hover:shadow-md   shadow-blue-300 "
@@ -68,11 +67,11 @@ const Api = () => {
            
           </div>
         </div>
-      </div>
-      <div id="show_hide"  className="flex justify-center mt-5 text-gray-800">
+     
+      <div id="show_hide"  className="flex justify-center mt-5 text-gray-800 ">
         
         {data && (
-          <div className="border   rounded-md shadow-xl w-80 py-5 text-center">
+          <div className="border  bg-blue-400 rounded-md shadow-xl w-80 py-5 text-center">
             <div className="text-3xl font-bold inline-flex mx-auto">
               <h1>{data.name},</h1>
               <h1 className="px-5">{data.sys.country}</h1>
@@ -87,6 +86,9 @@ const Api = () => {
         )}
       </div>
       </div>
+    
+
+
      
   );
 };
