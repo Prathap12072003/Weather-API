@@ -13,7 +13,6 @@ const Api = () => {
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=4bbbb48924609517a87421484b1cdea2`
       );
       setdata(responce.data);
-      setweatherdata({ summa: responce.data.weather[0].description });
       console.log(responce.data);
     } catch (err) {
       alert("Plece Enter The Valid City Name");
@@ -51,7 +50,7 @@ const Api = () => {
                 {data.name}, {data.sys.country}
               </h1>
             </div>
-            <p className="text-2xl font-bold  font-righteous text-gray-700  mt-3">
+            <p className="text-xl font-bold   text-gray-700  mt-3">
               {data.weather[0].main},{data.weather[0].description}
             </p>
             <div className="text-lg font-semibold pl-2 text-gray-700 mt-1 flex  w-[180px] mx-auto ">
