@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { WiHumidity } from "react-icons/wi";
-import celcius from '../assets/celsius-degree-removebg.png'
-// import Weather_img from "../assets/Weather_img.jpg"
-// import weatherimg from './weatherimg/'
+import celcius from "../assets/celsius-degree-removebg.png";
 
 const Api = () => {
   const [city, setcity] = useState("");
   const [data, setdata] = useState();
-  const [weatherdata, setweatherdata] = useState();
 
   const weather = async (res) => {
     try {
@@ -22,31 +19,9 @@ const Api = () => {
       alert("Plece Enter The Valid City Name");
     }
   };
-  // let showhide=document.querySelector("#show_hide");
-  //   let isshow=true;
-  //   function hidden(){
-  //     if(isshow){
-  //       showhide.style.display="none";
-  //       isshow=false;
-  //     }else{
-  //       showhide.style.display="block";
-  //       isshow=true;
-  //     }
-  //   }
-  // let a=1;
-  // const hide=()=>{
-  //   if(a==1){
-  //     document.getElementById('show_hide').style.display="inline"
-  //     return a=0;
-  //   }
-  //   else{
-  //     document.getElementById('show_hide').style.display="none"
-  //    }
-  // }
 
   return (
     <div className="container mx-auto ">
-    
       <h1 className="text-3xl w-full md:text-4xl text-blue-500 font-bold text-center mt-52 mx-auto">
         Weather App
       </h1>
@@ -72,31 +47,34 @@ const Api = () => {
         {data && (
           <div className="border bg-blue-300 rounded-md shadow-xl w-[280px] sm:w-80 py-5 text-center">
             <div className="text-3xl  sm:text-4xl font-extrabold  inline-flex mx-auto">
-              <h1>{data.name}, {data.sys.country}</h1>
-              {/* <h1 className="px-5"></h1> */}
+              <h1>
+                {data.name}, {data.sys.country}
+              </h1>
             </div>
             <p className="text-2xl font-bold  font-righteous text-gray-700  mt-3">
               {data.weather[0].main},{data.weather[0].description}
             </p>
             <div className="text-lg font-semibold pl-2 text-gray-700 mt-1 flex  w-[180px] mx-auto ">
-              <div >
-              <WiHumidity className=" mt-1 text-3xl text-blue-600  mx-auto " />
+              <div>
+                <WiHumidity className=" mt-1 text-3xl text-blue-600  mx-auto " />
               </div>
-           
-            <p className=" mt-1 font-semibold">Humidity : {data.main.humidity}%</p>
+
+              <p className=" mt-1 font-semibold">
+                Humidity : {data.main.humidity}%
+              </p>
             </div>
-          
 
             <div className="text-xl font-semibold mt-[-2px] text-gray-700  flex w-[115px] mx-auto  pl-3">
               <p className="mx-auto mt-2  ">{data.main.temp}</p>
-              <p ><img src={celcius}  /></p>
+              <p>
+                <img src={celcius} />
+              </p>
             </div>
-            
+
             <p className="text-xl font-semibold text-gray-700 mt-1">
               Lon:{data.coord.lon} Lat:{data.coord.lat}
             </p>
-            <p className="text-xl font-semibold text-gray-600 mt-3">
-            </p>
+            <p className="text-xl font-semibold text-gray-600 mt-3"></p>
           </div>
         )}
       </div>
